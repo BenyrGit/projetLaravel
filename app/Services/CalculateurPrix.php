@@ -17,6 +17,13 @@ class CalculateurPrix
         }
 
         return round($prixHT * (1 + $tauxTaxe), 2);
+
+        // Code pour tester Phpstan: on retourne null si le taux de taxe est négatif ou si le prix HT est négatif
+        // $resultat= null;
+        // if ($tauxTaxe>= 0 and $prixHT>= 0) {
+        // $resultat= round($prixHT* (1 + $tauxTaxe), 2);
+        // }
+        // return $resultat; // PHPStan: peut retourner nullau lieu de float
     }
 
     public function appliquerRemise(float $prix, float $remisePourcentage): float
