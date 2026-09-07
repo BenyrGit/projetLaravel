@@ -30,7 +30,7 @@ class LancerCalculateur extends Command
             $prixTTC = $calculateur->calculerAvecTaxe($prixHT, $taux);
             $this->info("Prix TTC ($taux) : $prixTTC $");
         } catch (\InvalidArgumentException $e) {
-            $this->error('Taxe invalide : ' . $e->getMessage());
+            $this->error('Taxe invalide : '.$e->getMessage());
         }
 
         // Remise
@@ -38,7 +38,7 @@ class LancerCalculateur extends Command
             $prixRemise = $calculateur->appliquerRemise($prixHT, $remise);
             $this->info("Après remise $remise% : $prixRemise $");
         } catch (\InvalidArgumentException $e) {
-            $this->error('Remise invalide : ' . $e->getMessage());
+            $this->error('Remise invalide : '.$e->getMessage());
         }
 
         // Seuil minimum
@@ -49,7 +49,7 @@ class LancerCalculateur extends Command
 
             $this->info("Seuil minimum $seuil $ : $statut");
         } catch (\InvalidArgumentException $e) {
-            $this->error('Seuil invalide : ' . $e->getMessage());
+            $this->error('Seuil invalide : '.$e->getMessage());
         }
     }
 }

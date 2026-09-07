@@ -45,3 +45,6 @@ jobs:
         with:
           name: coverage-report
           path: reports/coverage
+
+      - name: Audit des dépendances
+        run: composer audit --abandoned=ignore --ignore-severity=low,moderate
