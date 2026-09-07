@@ -34,24 +34,22 @@ class LancerCalculateur extends Command
         }
 
         // Remise
-        // try {
-        //     $prixRemise = $calculateur->appliquerRemise($prixHT, $remise);
-        //     $this->info("Après remise $remise% : $prixRemise $");
-        // } catch (\InvalidArgumentException $e) {
-        //     $this->error('Remise invalide : ' . $e->getMessage());
-        // }
+        try {
+            $prixRemise = $calculateur->appliquerRemise($prixHT, $remise);
+            $this->info("Après remise $remise% : $prixRemise $");
+        } catch (\InvalidArgumentException $e) {
+            $this->error('Remise invalide : ' . $e->getMessage());
+        }
 
         // Seuil minimum
-        // try {
-        //     $respecte = $calculateur->respecteSeuilMinimum($prixHT, $seuil);
+        try {
+            $respecte = $calculateur->respecteSeuilMinimum($prixHT, $seuil);
 
-        //     $statut = $respecte
-        //         ? 'respecté'
-        //         : 'non respecté';
+            $statut = $respecte ? 'respecté' : 'non respecté';
 
-        //     $this->info("Seuil minimum $seuil $ : $statut");
-        // } catch (\InvalidArgumentException $e) {
-        //     $this->error('Seuil invalide : ' . $e->getMessage());
-        // }
+            $this->info("Seuil minimum $seuil $ : $statut");
+        } catch (\InvalidArgumentException $e) {
+            $this->error('Seuil invalide : ' . $e->getMessage());
+        }
     }
 }
