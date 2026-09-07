@@ -16,4 +16,6 @@ Closes #
 
 - [] Les tests passent localement
 - [] Le code respecte les conventions (Conventional Commits)
+- [] Pint passe sans erreur
+- [] PHPStan passe sans erreur
 - [] Pas de secrets dans le code
