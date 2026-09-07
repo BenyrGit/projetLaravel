@@ -40,6 +40,13 @@ class CalculateurPrixTest extends TestCase
         $calculateur->calculerAvecTaxe(100.00, -0.10);
     }
 
+    public function test_remise_negative_leve_exception(): void
+    {
+        $calculateur = new CalculateurPrix();
+        $this->expectException(\InvalidArgumentException::class);
+        $calculateur->appliquerRemise(100.00, -10);
+    }
+
     public function test_seuil_negatif_leve_exception(): void
     {
         $calculateur = new CalculateurPrix();
