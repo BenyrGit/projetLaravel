@@ -1,23 +1,27 @@
 name: CI Laravel
-
-on:
+on: # déclencheurs
   push:
-    branches: ["*"]
+    branches: [ "*" ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-
+  tests: # nom du job
+    runs-on: ubuntu-latest # runnerGitHub-hosted
     steps:
-      - name: Checkout du code
+      # - name: Checkout du code # clone le dépôt
+      # - name: Setup PHP
+      # - name: Installer les dépendances
+      # - name: Préparer le .env de test
+      # - name: Lancer les tests
+
+      - name: Checkout du code # clone le dépôt
         uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.4"
+          php-version: '8.4'
           extensions: pdo, pdo_mysql, mbstring, bcmath
           coverage: xdebug
 
