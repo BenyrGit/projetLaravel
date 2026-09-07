@@ -14,6 +14,6 @@ Closes #
 
 ## Checklist
 
-- [ ] Les tests passent localement
-- [ ] Le code respecte les conventions (Conventional Commits)
-- [ ] Pas de secrets dans le code
+- [] Les tests passent localement
+- [] Le code respecte les conventions (Conventional Commits)
+- [] Pas de secrets dans le code
